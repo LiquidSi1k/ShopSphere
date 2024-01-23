@@ -1,11 +1,8 @@
 import "./App.css";
+import Directory from "./components/diretory/Directory";
 
 const App = () => {
-  return (
-    <main className="text-center">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </main>
-  );
+  return <Directory />;
 };
 
 export default App;
