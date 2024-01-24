@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary-color: #2e383f;
+  --secondary-color: #ffffff;
+  --accent-color: #44525c;
+  --background-color: #181e22;
+  --light-gray: #e6e6e6;
+  --dark-gray: #596c7a;
+}
+
+body {
+  font-family: "Arvo", serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
