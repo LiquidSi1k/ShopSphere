@@ -1,7 +1,7 @@
 const FormInput = ({ label, ...otherProps }) => {
   const { value } = otherProps;
   return (
-    <div className="flex items-center justify-center w-96 m-6 ">
+    <div className="flex items-center justify-center w-96 my-6 ">
       <div className="relative w-full ">
         <input
           {...otherProps}

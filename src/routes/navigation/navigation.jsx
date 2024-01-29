@@ -23,7 +23,7 @@ const Navigation = () => {
           <Link className="text-2xl" to="/">
             Contact
           </Link>
-          <Link className="text-2xl" to="/sign-in">
+          <Link className="text-2xl" to="/auth">
             Sign In
           </Link>
           <BiCartDownload className="text-3xl" />

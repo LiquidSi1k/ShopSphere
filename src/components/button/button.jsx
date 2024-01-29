@@ -1,4 +1,4 @@
-const Button = ({ children, buttonType }) => {
+const Button = ({ children, buttonType, onClick }) => {
   return (
     <button
       className={`${
@@ -7,7 +7,8 @@ const Button = ({ children, buttonType }) => {
           : buttonType === "googleSignIn"
           ? "bg-emerald-500 hover:brightness-110"
           : ""
-      } p-4 rounded`}
+      } p-4 rounded border`}
+      onClick={onClick}
     >
       {children}
     </button>
