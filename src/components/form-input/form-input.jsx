@@ -1,5 +1,6 @@
 const FormInput = ({ label, ...otherProps }) => {
   const { value } = otherProps;
+  // console.log(value);
   return (
     <div className="flex items-center justify-center w-96 my-6 ">
       <div className="relative w-full ">

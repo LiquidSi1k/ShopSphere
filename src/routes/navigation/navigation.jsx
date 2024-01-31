@@ -1,9 +1,14 @@
+import { useContext } from "react";
+import { UserContext } from "../../context/user.context";
 import { Outlet, Link } from "react-router-dom";
 import Footer from "../footer/footer";
 import Logo from "../../assets/logo.png";
 import { BiCartDownload } from "react-icons/bi";
+import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 const Navigation = () => {
+  const { currentUser } = useContext(UserContext);
+
   return (
     <>
       <nav className="flex justify-between p-5 pb-0 items-center">
@@ -23,9 +28,15 @@ const Navigation = () => {
           <Link className="text-2xl" to="/">
             Contact
           </Link>
-          <Link className="text-2xl" to="/auth">
-            Sign In
-          </Link>
+          {currentUser ? (
+            <span className="text-2xl" onClick={signOutUser}>
+              Sign Out
+            </span>
+          ) : (
+            <Link className="text-2xl" to="/auth">
+              Sign In
+            </Link>
+          )}
           <BiCartDownload className="text-3xl" />
         </div>
       </nav>
