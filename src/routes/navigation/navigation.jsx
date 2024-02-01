@@ -1,17 +1,20 @@
 import { useContext } from "react";
+import CartIcon from "../../components/ cart-icon/cart-component";
+import CartDropdown from "../../components/cart-dropdown/cart-dropdown";
 import { UserContext } from "../../context/user.context";
+import { CartContext } from "../../context/cart.context";
 import { Outlet, Link } from "react-router-dom";
 import Footer from "../footer/footer";
 import Logo from "../../assets/logo.png";
-import { BiCartDownload } from "react-icons/bi";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
+  const { isCartOpen } = useContext(CartContext);
 
   return (
     <>
-      <nav className="flex justify-between p-5 pb-0 items-center">
+      <nav className="flex justify-between p-5 pb-0 items-center relative">
         <div className="flex items-center">
           <Link
             to="/"
@@ -37,8 +40,9 @@ const Navigation = () => {
               Sign In
             </Link>
           )}
-          <BiCartDownload className="text-3xl" />
+          <CartIcon />
         </div>
+        {isCartOpen && <CartDropdown />}
       </nav>
       <Outlet />
       <Footer />

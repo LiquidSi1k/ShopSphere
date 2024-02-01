@@ -1,4 +1,4 @@
-import categories from "../../json/main";
+import categories from "../../json/main-data";
 import CategoryItem from "../categories-item/category-item";
 
 const Directory = () => {
