@@ -1,7 +1,12 @@
 import Button from "../button/button";
+import { useContext } from "react";
+import { CartContext } from "../../context/cart.context";
 
 const ProductCard = ({ product }) => {
   const { name, imageUrl, price } = product;
+  const { addItemsToCart } = useContext(CartContext);
+
+  const addProductToCart = () => addItemsToCart(product);
 
   return (
     <div className="border relative rounded overflow-hidden group shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] transition-all duration-200 group cursor-pointer">
@@ -16,7 +21,9 @@ const ProductCard = ({ product }) => {
         <p className="text-xl">{price}</p>
       </div>
       <div className="absolute bottom-20 left-6 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-100">
-        <Button buttonType="standardBtn">Add to Cart</Button>
+        <Button buttonType="standardBtn" onClick={addProductToCart}>
+          Add to Cart
+        </Button>
       </div>
     </div>
   );

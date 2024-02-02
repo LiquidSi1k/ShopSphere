@@ -22,7 +22,9 @@ const Navigation = () => {
           >
             <img src={Logo} alt="logo" className="h-full" />
           </Link>
-          <span className="pl-4 text-3xl font-semibold">ShopSphere</span>
+          <Link to="/">
+            <span className="pl-4 text-3xl font-semibold">ShopSphere</span>
+          </Link>
         </div>
         <div className="flex gap-10 pr-4">
           <Link className="text-2xl" to="/shop">
