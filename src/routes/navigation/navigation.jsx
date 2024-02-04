@@ -30,7 +30,7 @@ const Navigation = () => {
           <Link className="text-2xl" to="/shop">
             Shop
           </Link>
-          <Link className="text-2xl" to="/">
+          <Link className="text-2xl" to="/contact">
             Contact
           </Link>
           {currentUser ? (

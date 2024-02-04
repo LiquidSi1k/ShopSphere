@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../context/cart.context";
 import { FaCaretRight } from "react-icons/fa6";
 import { FaCaretLeft } from "react-icons/fa6";
@@ -21,7 +21,7 @@ const Checkout = () => {
         return (
           <div key={id}>
             <h2>{name}:</h2>
-            <div className="flex gap-4 items-center">
+            <div className="flex items-center">
               <span onClick={() => removeItemsFromCart(cartItem)}>
                 <FaCaretLeft />
               </span>
@@ -29,7 +29,7 @@ const Checkout = () => {
               <span onClick={() => addItemsToCart(cartItem)}>
                 <FaCaretRight />
               </span>
-              <p>total ${price * quantity}</p>
+              <p className="pl-6">total ${price * quantity}</p>
             </div>
           </div>
         );
